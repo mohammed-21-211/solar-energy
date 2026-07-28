@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Warm Editorial — أنماط أساسية
+   ============================================================ */
+@layer base {
+  html {
+    direction: rtl;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-tajawal bg-paper text-ink antialiased;
+    font-feature-settings: 'tnum', 'ss01';
+  }
+
+  /* العناوين — تصميم تحريري بحروف عريضة وضيقة التباعد */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-cairo font-bold text-ink;
+    letter-spacing: -0.02em;
+  }
+  h1 { line-height: 1.1; }
+  h2 { line-height: 1.15; }
+  h3 { line-height: 1.25; }
+
+  /* النصوص الكبيرة بخط مُسطّر (تحريري) */
+  .display-serif {
+    @apply font-serif font-bold text-ink;
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+  }
+
+  /* شريط التمرير — هادئ */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-paper;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-sand-300 rounded-full hover:bg-sand-400 transition-colors;
+  }
+
+  /* تحديد النص — لون terracotta */
+  ::selection {
+    background-color: #F4E4DC;
+    color: #82371F;
+  }
+
+  /* الروابط الافتراضية */
+  a {
+    @apply transition-colors;
+  }
+}
+
+/* ============================================================
+   مكوّنات قابلة لإعادة الاستخدام
+   ============================================================ */
+@layer components {
+
+  /* ===== الأزرار ===== */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-bold bg-sun-500 text-ivory border border-sun-500 hover:bg-sun-600 hover:border-sun-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+    letter-spacing: -0.01em;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-bold bg-transparent text-ink border border-ink hover:bg-ink hover:text-ivory transition-colors disabled:opacity-50;
+    letter-spacing: -0.01em;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium text-ink hover:bg-sand-100 transition-colors;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium bg-transparent text-red-700 border border-red-200 hover:bg-red-50 transition-colors;
+  }
+
+  /* ===== البطاقة ===== */
+  .card {
+    @apply bg-ivory rounded-xl border border-sand-200 overflow-hidden transition-all duration-200;
+  }
+
+  .card-hover {
+    @apply hover:border-sand-300 hover:shadow-whisper;
+  }
+
+  /* ===== حقول الإدخال ===== */
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg bg-ivory border border-sand-200 text-ink placeholder:text-sand-400 focus:border-sun-500 focus:outline-none focus:ring-1 focus:ring-sun-500 transition-colors;
+  }
+
+  .label-field {
+    @apply block text-xs font-bold text-sand-700 uppercase tracking-wider mb-2;
+    letter-spacing: 0.06em;
+  }
+
+  /* ===== شارة الفئة (eyebrow) ===== */
+  .eyebrow {
+    @apply inline-block text-xs font-bold uppercase text-sun-700;
+    letter-spacing: 0.12em;
+  }
+
+  /* ===== العلامة (tag/chip) ===== */
+  .tag {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-medium;
+    letter-spacing: 0.02em;
+  }
+
+  /* ===== التخطيط ===== */
+  .section-padding {
+    @apply px-5 sm:px-8 lg:px-12 py-16 lg:py-24;
+  }
+
+  .container-app {
+    @apply max-w-content mx-auto;
+  }
+
+  /* ===== الخط الفاصل التحريري ===== */
+  .divider {
+    @apply border-t border-sand-200;
+  }
+
+  /* ===== خط احتياطي للأرقام (tabular) ===== */
+  .nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ===== رابط نصي بـ underline دقيق ===== */
+  .link {
+    @apply text-sun-600 font-medium;
+    text-decoration: underline;
+    text-decoration-color: rgba(192, 81, 47, 0.4);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  .link:hover {
+    @apply bg-sun-50;
+    text-decoration: none;
+  }
+}

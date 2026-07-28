@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc *)",
+      "Bash(cp .env.example .env)",
+      "Bash(npm run *)",
+      "Bash(echo \"---EXIT: $?\")",
+      "Bash(curl -s -o /dev/null -w \"HTTP_STATUS: %{http_code}\\\\n\" \"https://nhwowocnakeeypgywxzw.supabase.co/rest/v1/\" -H \"apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5od293b2NuYWtlZXlwZ3l3eHp3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxMDM4NjksImV4cCI6MjA5NDY3OTg2OX0.g_OTvmli9W06TBzQQ_er7hSUQc5ACWfluUhs-pa89X8\")",
+      "Bash(curl -sI \"https://github.com/nexu-io/open-design\" -o /dev/null -w \"%{http_code}\\\\n\")",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(npx vite *)"
+    ]
+  }
+}
